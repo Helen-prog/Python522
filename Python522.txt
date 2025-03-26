@@ -139,3 +139,6 @@ git clone https://github.com/Helen-prog/Python522.git
 
 git pull
 - забираем изменения с удаленного репозитория в локальный.
+
+
+

@@ -8,7 +8,7 @@
 #
 # print(id(name))
 # print(id(age))
-from os import write
+# from os import write
 
 # a = b = c = 10
 # a, b, c = 5, "Hello", 7.2
@@ -3702,3 +3702,5 @@ for obj in objs:
         print(f"{obj} - file - {os.path.getsize(p)} bytes")
     if os.path.isdir(p):
         print(f"{obj} - dir")
+
+
