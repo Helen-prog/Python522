@@ -108,3 +108,34 @@ git push -u origin master
 2) git commit -m "change file"
 3) git push
 
+git branch
+- просмотр веток
+
+git branch test
+- создание ветки
+
+git branch -D test
+- удаление ветки
+
+git branch readme
+
+git checkout readme
+- перейти на ветку
+
+readme.md
+
+
+git checkout master
+
+master -> readme
+- readme.md
+
+		   
+git merge readme
+- слияние веток
+
+git clone https://github.com/Helen-prog/Python522.git
+- клонирование репозитория
+
+git pull
+- забираем изменения с удаленного репозитория в локальный.
