@@ -3678,7 +3678,7 @@
 # print(size // 1024)
 
 
-import os
+# import os
 
 
 # file_path = r"nested1\nested2\nested3\text2.txt"
@@ -3791,43 +3791,43 @@ import os
 # print(p2.__dict__)
 
 
-class Human:
-    name = "name"
-    birthday = "00.00.0000"
-    phone = "00-00-00"
-    country = "country"
-    city = "city"
-    address = "street, house"
-
-    def print_info(self):
-        print(" Персональные данные ".center(40, "*"))
-        print(f"Имя: {self.name}\nДата рождения: {self.birthday}\n"
-              f"Номер телефона: {self.phone}\nСтрана: {self.country}\n"
-              f"Город: {self.city}\nДомашний адрес: {self.address}")
-        print("=" * 40)
-
-    def input_info(self, first_name, birthday, phone, country, city, address):
-        self.name = first_name
-        self.birthday = birthday
-        self.phone = phone
-        self.country = country
-        self.city = city
-        self.address = address
-
-    def set_name(self, name):  # установили новое имя
-        self.name = name
-
-    def get_name(self):  # получили имя
-        return self.name
-
-
-h1 = Human()
-h1.print_info()
-h1.input_info("Юля", "23.05.1986", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1A")
-h1.print_info()
-h1.set_name("Юлия")
-h1.print_info()
-print(h1.get_name())
+# class Human:
+#     name = "name"
+#     birthday = "00.00.0000"
+#     phone = "00-00-00"
+#     country = "country"
+#     city = "city"
+#     address = "street, house"
+#
+#     def print_info(self):
+#         print(" Персональные данные ".center(40, "*"))
+#         print(f"Имя: {self.name}\nДата рождения: {self.birthday}\n"
+#               f"Номер телефона: {self.phone}\nСтрана: {self.country}\n"
+#               f"Город: {self.city}\nДомашний адрес: {self.address}")
+#         print("=" * 40)
+#
+#     def input_info(self, first_name, birthday, phone, country, city, address):
+#         self.name = first_name
+#         self.birthday = birthday
+#         self.phone = phone
+#         self.country = country
+#         self.city = city
+#         self.address = address
+#
+#     def set_name(self, name):  # установили новое имя
+#         self.name = name
+#
+#     def get_name(self):  # получили имя
+#         return self.name
+#
+#
+# h1 = Human()
+# h1.print_info()
+# h1.input_info("Юля", "23.05.1986", "45-46-98", "Россия", "Москва", "Чистопрудный бульвар, 1A")
+# h1.print_info()
+# h1.set_name("Юлия")
+# h1.print_info()
+# print(h1.get_name())
 
 
 # class Person:
@@ -3920,3 +3920,235 @@ print(h1.get_name())
 # del droid1, droid2, droid3
 #
 # print("Численность роботов:", Robot.k)
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = self.__y = 0
+#         if Point.__check_value(x) and Point.__check_value(y):
+#             self.__x = x
+#             self.__y = y
+#
+#     def __check_value(c):
+#         if isinstance(c, int) or isinstance(c, float):
+#             return True
+#         return False
+#
+#     def set_coord(self, x, y):
+#         if Point.__check_value(x) and Point.__check_value(y):
+#             self.__x = x
+#             self.__y = y
+#         else:
+#             print("Координаты должны быть числами")
+#
+#     def get_coord(self):
+#         return self.__x, self.__y
+#
+#     def set_coord_x(self, x):
+#         if Point.__check_value(x):
+#             self.__x = x
+#         else:
+#             print("Координат x должны быть числом")
+#
+#     def set_coord_y(self, y):
+#         if Point.__check_value(y):
+#             self.__y = y
+#         else:
+#             print("Координата y должны быть числом")
+#
+#
+# p1 = Point(5, 10)
+# # print(p1.__x, p1.__y)
+# # p1.z = 20
+# # p1.__x = 100
+# # p1.__y = "abc"
+# # print(p1.__x, p1.__y)
+# p1.set_coord(5.2, 100)
+# p1.set_coord_x(8.2)
+# print(p1.get_coord())
+# print(p1.__dict__)
+# # p1.__check_value(10)
+# # print(Point.__dict__)
+# p1._Point__x = 111
+# print(p1._Point__x)
+# print(p1.__dict__)
+
+# import math
+#
+#
+# class Rectangle:
+#     def __init__(self, length=1, width=1):
+#         self.__length = length
+#         self.__width = width
+#
+#     def __check_value(c):
+#         if isinstance(c, int) or isinstance(c, float):
+#             return True
+#         return False
+#
+#     def get_width(self):
+#         return self.__width
+#
+#     def get_length(self):
+#         return self.__length
+#
+#     def set_width(self, width):
+#         if Rectangle.__check_value(width):
+#             self.__width = width
+#
+#     def set_length(self, length):
+#         if Rectangle.__check_value(length):
+#             self.__length = length
+#
+#     def get_area(self):
+#         return self.__width * self.__length
+#
+#     def get_perimeter(self):
+#         return 2 * (self.__width + self.__length)
+#
+#     def get_hypotenuse(self):
+#         return round(math.sqrt(self.__length ** 2 + self.__width ** 2), 2)
+#
+#     def get_draw(self):
+#         print(('*' * self.__width + "\n") * self.__length)
+#
+#     # def get_draw(self):
+#     #     for _ in range(self.__length):
+#     #         print("*" * self.__width)
+#
+#
+# r1 = Rectangle()
+# r1.set_width(9)
+# r1.set_length(3)
+# print("Длина прямоугольника:", r1.get_length())
+# print("Ширина прямоугольника:", r1.get_width())
+# print("Площадь прямоугольника:", r1.get_area())
+# print("Периметр прямоугольника:", r1.get_perimeter())
+# print("Гипотенуза прямоугольника:", r1.get_hypotenuse())
+# r1.get_draw()
+
+
+# class Point:
+#     __slots__ = ["x", "y"]
+#
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+#
+#
+# p1 = Point(5, 10)
+# # p1.z = 20
+# print(p1.x, p1.y)
+# print(p1.x, p1.y, p1.z)
+# print(p1.__dict__)
+
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __check_value(c):
+#         if isinstance(c, int) or isinstance(c, float):
+#             return True
+#         return False
+#
+#     def __set_coord_x(self, x):
+#         if Point.__check_value(x):
+#             self.__x = x
+#         else:
+#             print("Координат x должны быть числом")
+#
+#     def __get_coord_x(self):
+#         return self.__x
+#
+#     def __del_coord_x(self):
+#         print("Удаление свойства")
+#         del self.__x
+#
+#     coordX = property(__get_coord_x, __set_coord_x, __del_coord_x)
+#
+#
+# p1 = Point(5, 10)
+# p1.coordX = 20.5
+# print(p1.coordX)
+# del p1.coordX
+# print(p1.__dict__)
+
+# class Point:
+#     def __init__(self, x, y):
+#         self.__x = x
+#         self.__y = y
+#
+#     def __check_value(c):
+#         if isinstance(c, int) or isinstance(c, float):
+#             return True
+#         return False
+#
+#     @property
+#     def x(self):
+#         return self.__x
+#
+#     @x.deleter
+#     def x(self):
+#         print("Удаление свойства")
+#         del self.__x
+#
+#     @x.setter
+#     def x(self, x):
+#         if Point.__check_value(x):
+#             self.__x = x
+#         else:
+#             print("Координат x должны быть числом")
+#     # coordX = property(__get_coord_x, __set_coord_x, __del_coord_x)
+#
+#
+# p1 = Point(5, 10)
+# p1.x = 50
+# print(p1.x)
+# del p1.x
+# print(p1.__dict__)
+
+
+# class Point:
+#     __count = 0
+#
+#     def __init__(self, x=0, y=0):
+#         self.x = x
+#         self.y = y
+#         Point.__count += 1
+#
+#     @staticmethod
+#     def get_count():
+#         return Point.__count
+#
+#
+# p1 = Point()
+# p2 = Point()
+# p3 = Point()
+# print(Point.get_count())
+# print(p1.get_count())
+
+# def inc(x):
+#     return x + 1
+#
+#
+# def dec(x):
+#     return x - 1
+#
+#
+# print(inc(10), dec(10))
+#
+#
+# class Change:
+#     @staticmethod
+#     def inc(x):
+#         return x + 1
+#
+#     @staticmethod
+#     def dec(x):
+#         return x - 1
+#
+#
+# print(Change.inc(10), Change.dec(10))
+
+
