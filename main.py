@@ -5164,34 +5164,234 @@
 # subclass.display("Эта строка будет печататься и записываться в файл")
 
 
-class Goods:
-    def __init__(self, name, weight, price):
-        super().__init__()
-        print("Init Goods")
+# class Goods:
+#     def __init__(self, name, weight, price):
+#         super().__init__()
+#         print("Init Goods")
+#         self.name = name
+#         self.weight = weight
+#         self.price = price
+#
+#     def print_info(self):
+#         print(f"{self.name}, {self.weight}, {self.price}")
+#
+#
+# class MixinLog:
+#     ID = 0
+#
+#     def __init__(self):
+#         print("Init MixinLog")
+#         MixinLog.ID += 1
+#         self.id = MixinLog.ID
+#
+#     def save_sell_log(self):
+#         print(f"{self.id}: товар был продан в 15:20")
+#
+#
+# class Notebook(Goods, MixinLog):
+#     ...
+#
+#
+# n = Notebook("HP", 1.5, 35000)
+# n.print_info()
+# n.save_sell_log()
+
+# Перегрузка операторов
+
+# Число секунд в одном дне: 24 * 60 * 60 = 86400
+
+# class Clock:
+#     __DAY = 86400
+#
+#     def __init__(self, sec: int):
+#         if not isinstance(sec, int):
+#             raise ValueError("Секунды должны быть целым числом")
+#         self.sec = sec % self.__DAY
+#
+#     def get_format_time(self):
+#         s = self.sec % 60
+#         m = (self.sec // 60) % 60
+#         h = (self.sec // 3600) % 24
+#         return f"{Clock.__get_form(h)}:{Clock.__get_form(m)}:{Clock.__get_form(s)}"
+#
+#     @staticmethod
+#     def __get_form(x):
+#         return str(x) if x > 9 else "0" + str(x)
+#
+#     def __add__(self, other):
+#         if not isinstance(other, Clock):
+#             raise ArithmeticError("Правый операнд должен быть типом Clock")
+#         return Clock(self.sec + other.sec)
+#
+#     def __eq__(self, other):
+#         if not isinstance(other, Clock):
+#             raise ArithmeticError("Правый операнд должен быть типом Clock")
+#         # if self.sec == other.sec:
+#         #     return True
+#         # return False
+#         return self.sec == other.sec
+#
+#     def __ne__(self, other):
+#         return not self.__eq__(other)
+#
+#
+# c1 = Clock(100)
+# c2 = Clock(200)
+# # c4 = Clock(300)
+# # c3 = c1 + c2 + c4
+# # c1 += c2
+# print(c1.get_format_time())
+# print(c2.get_format_time())
+# # print(c4.get_format_time())
+# # print(c3.get_format_time())
+# # if c1 == c2:
+# #     print("Время одинаковое")
+# # else:
+# #     print("Время разное")
+#
+# if c1 != c2:
+#     print("Время разное")
+# else:
+#     print("Время одинаковое")
+
+
+# class Student:
+#     def __init__(self, name, *marks):
+#         self.name = name
+#         self.marks = list(marks)
+#
+#     def __getitem__(self, item):
+#         if 0 <= item < len(self.marks):
+#             return self.marks[item]
+#         else:
+#             raise IndexError("Неверный индекс")
+#
+#     def __setitem__(self, key, value):
+#         if not isinstance(key, int) or key < 0:
+#             raise TypeError("Индекс должен быть целым положительным числом")
+#
+#         if key >= len(self.marks):
+#             off = key + 1 - len(self.marks)  # 10 + 1 - 5 = 6
+#             self.marks.extend([None] * off)  # [5, 5, 3, 4, 5, None, None, None, None, None, None]
+#
+#         self.marks[key] = value  # [5, 5, 3, 4, 5, None, None, None, None, None, 4]
+#
+#     def __delitem__(self, key):
+#         if not isinstance(key, int):
+#             raise TypeError("Индекс должен быть целым числом")
+#         del self.marks[key]
+#
+#
+# s1 = Student("Сергей", 5, 5, 3, 4, 5)
+# print(s1[2])
+# s1[10] = 4
+# del s1[2]
+# print(s1.marks)
+
+
+# class Clock:
+#     __DAY = 86400
+#
+#     def __init__(self, sec: int):
+#         if not isinstance(sec, int):
+#             raise ValueError("Секунды должны быть целым числом")
+#         self.sec = sec % self.__DAY
+#
+#     def get_format_time(self):
+#         s = self.sec % 60
+#         m = (self.sec // 60) % 60
+#         h = (self.sec // 3600) % 24
+#         return f"{Clock.__get_form(h)}:{Clock.__get_form(m)}:{Clock.__get_form(s)}"
+#
+#     @staticmethod
+#     def __get_form(x):
+#         return str(x) if x > 9 else "0" + str(x)
+#
+#     def __getitem__(self, item):
+#         if not isinstance(item, str):
+#             raise ValueError("Ключ должен быть строкой")
+#         if item == "hour":
+#             return (self.sec // 3600) % 24
+#         if item == "min":
+#             return (self.sec // 60) % 60
+#         if item == "sec":
+#             return self.sec % 60
+#         return "Неверный ключ"
+#
+#     def __setitem__(self, key, value):
+#         if not isinstance(key, str):
+#             raise ValueError("Ключ должен быть строкой")
+#         if not isinstance(value, int):
+#             raise ValueError("Значение должен быть целым числом")
+#
+#         s = self.sec % 60
+#         m = (self.sec // 60) % 60
+#         h = (self.sec // 3600) % 24
+#
+#         if key == "hour":
+#             self.sec = s + 60 * m + value * 3600
+#         if key == "min":
+#             self.sec = s + 60 * value + h * 3600
+#         if key == "sec":
+#             self.sec = value + 60 * m + h * 3600
+#
+#
+# c1 = Clock(8000)
+# print(c1.get_format_time())
+# print(c1["hour"], c1["min"], c1["sec"])
+# c1["hour"] = 10
+# print(c1.get_format_time())
+# c1["min"] = 62
+# print(c1.get_format_time())
+# c1["sec"] = 70
+# print(c1.get_format_time())
+
+
+# class Point:
+#     def __init__(self, x):
+#         self.x = x
+#
+#     # def __str__(self):
+#     #     return f"{self.x}"
+#
+#     def __repr__(self):
+#         return f"{self.__class__}: {self.x}"
+#
+#
+# p1 = Point(5)
+# print(p1)
+
+from random import choice, randint
+
+
+class Cat:
+    def __init__(self, name, age, pol):
         self.name = name
-        self.weight = weight
-        self.price = price
+        self.age = age
+        self.pol = pol
 
-    def print_info(self):
-        print(f"{self.name}, {self.weight}, {self.price}")
+    def __str__(self):
+        if self.pol == "M":
+            return f"{self.name} is good boy!!!"
+        elif self.pol == "F":
+            return f"{self.name} is good girl!!!"
+        else:
+            return f"{self.name} is good Kitty!!!"
 
+    def __repr__(self):
+        return f"Cat(name='{self.name}', age={self.age}, pol='{self.pol}')"
 
-class MixinLog:
-    ID = 0
-
-    def __init__(self):
-        print("Init MixinLog")
-        MixinLog.ID += 1
-        self.id = MixinLog.ID
-
-    def save_sell_log(self):
-        print(f"{self.id}: товар был продан в 15:20")
-
-
-class Notebook(Goods, MixinLog):
-    ...
+    def __add__(self, other):
+        if self.pol != other.pol:
+            return [Cat("No name", 0, choice(["M", "F"])) for _ in range(1, randint(2, 6))]  # range(1, 6)
+        else:
+            raise TypeError("Types are not supported!")
 
 
-n = Notebook("HP", 1.5, 35000)
-n.print_info()
-n.save_sell_log()
+cat1 = Cat("Tom", 4, "M")
+cat2 = Cat("Elsa", 5, "F")
+# cat3 = Cat("Murzik", 3, "M")
+print(cat1)
+print(cat2)
+# print(cat3)
+print(cat1 + cat2)
