@@ -10,6 +10,7 @@
 # print(id(age))
 # from os import write
 
+
 # a = b = c = 10
 # a, b, c = 5, "Hello", 7.2
 # print(a)
@@ -5767,21 +5768,215 @@
 # import geometry.sq
 # import geometry.trian
 
-from geometry import rect, sq, trian
+# from geometry import rect, sq, trian
 
 # from geometry import *
 
 
-r1 = rect.Rectangle(1, 2)
-r2 = rect.Rectangle(3, 4)
+# if __name__ == '__main__':
+#     r1 = rect.Rectangle(1, 2)
+#     r2 = rect.Rectangle(3, 4)
+#
+#     s1 = sq.Square(10)
+#     s2 = sq.Square(20)
+#
+#     t1 = trian.Triangle(1, 2, 3)
+#     t2 = trian.Triangle(4, 5, 6)
+#
+#     shape = [r1, r2, s1, s2, t1, t2]
+#
+#     for g in shape:
+#         print(g.get_perimeter())
 
-s1 = sq.Square(10)
-s2 = sq.Square(20)
 
-t1 = trian.Triangle(1, 2, 3)
-t2 = trian.Triangle(4, 5, 6)
+# def ran():
+#     r1 = rect.Rectangle(1, 2)
+#     r2 = rect.Rectangle(3, 4)
+#
+#     s1 = sq.Square(10)
+#     s2 = sq.Square(20)
+#
+#     t1 = trian.Triangle(1, 2, 3)
+#     t2 = trian.Triangle(4, 5, 6)
+#
+#     shape = [r1, r2, s1, s2, t1, t2]
+#
+#     for g in shape:
+#         print(g.get_perimeter())
+#
+#
+# if __name__ == '__main__':
+#     ran()
 
-shape = [r1, r2, s1, s2, t1, t2]
+# from car.electro_car import ElectroCar
+#
+#
+# if __name__ == '__main__':
+#     e_car = ElectroCar("Tesla", "T", 2018, 99000, 100)
+#     e_car.show_car()
+#     e_car.description_battery()
 
-for g in shape:
-    print(g.get_perimeter())
+# Упаковка (Сериализация) и распаковка (Десериализация) данных
+
+# import pickle
+
+
+# filename = "basket.txt"
+#
+# shop = {
+#     "фрукты": ["яблоко", "груша"],
+#     "овощи": ("морковь", "лук"),
+#     "бюджет": 1000
+# }
+#
+# with open(filename, "wb") as fh:
+#     pickle.dump(shop, fh)
+#
+# with open(filename, "rb") as fh:
+#     shop_list = pickle.load(fh)
+#
+# print(shop_list)
+
+
+# class Test:
+#     num = 25
+#     string = "Привет"
+#     lst = [1, 2, 3]
+#     dictionary = {"first": 1, "second": 2}
+#
+#     def __str__(self):
+#         return f"Число: {Test.num}\nСтрока: {Test.string}\nСписок: {Test.lst}\nСловарь: {Test.dictionary}"
+#
+#
+# obj = Test()
+# # print(obj)
+#
+# obj1 = pickle.dumps(obj)
+# print(f"Сериализация в строку:\n{obj1}\n")
+#
+# obj2 = pickle.loads(obj1)
+# print(f"Десериализация из строки:\n{obj2}\n")
+
+
+# class Test2:
+#     def __init__(self):
+#         self.a = 35
+#         self.b = "test"
+#         self.c = lambda x: x * x
+#
+#     def __str__(self):
+#         return f"{self.a} {self.b} {self.c(2)}"
+#
+#     def __getstate__(self):
+#         attr = self.__dict__.copy()
+#         del attr['c']
+#         return attr
+#
+#     def __setstate__(self, state):
+#         self.__dict__ = state
+#         self.c = lambda x: x * x
+#
+#
+# item1 = Test2()
+# print(item1)
+# item2 = pickle.dumps(item1)
+# print(item2)
+# item3 = pickle.loads(item2)
+# print(item3)
+# print(item3.__dict__)
+
+# import json
+
+
+# data = {
+#     'name': 'Olga',
+#     'age': 35,
+#     '20': None,
+#     'True': False,
+#     'hobbies': ('running', 'singing'),
+#     'children': [
+#         {
+#             'firstName': 'Alice',
+#             'age': 6
+#         }
+#     ]
+# }
+#
+# # with open('data_file.json', 'w') as fw:
+# #     json.dump(data, fw, indent=4)
+# #
+# #
+# # with open('data_file.json', "r") as fw:
+# #     data1 = json.load(fw)
+# #
+# # print(data1)
+#
+# json_string = json.dumps(data, sort_keys=True)
+# print(json_string)
+# print(type(json_string))
+# data2 = json.loads(json_string)
+# print(data2)
+# print(type(data2))
+
+# x = {"name": "Виктор"}
+
+# print(json.dumps(x))
+# print(json.dumps(x, ensure_ascii=False))
+#
+# a = json.dumps(x)
+# print(json.loads(a))
+
+# with open('data_file1.json', 'w') as fw:
+#     json.dump(x, fw)
+#
+# with open('data_file1.json', "r") as fw:
+#     data2 = json.load(fw)
+#
+# print(data2)
+
+
+import json
+from random import choice
+
+
+def gen_person():
+    name = ''
+    tel = ''
+
+    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'k', 'l', 'm', 'n']
+    nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+
+    while len(name) != 7:
+        name += choice(letters)
+    # print(name)
+
+    while len(tel) != 10:
+        tel += choice(nums)
+    # print(tel)
+
+    person = {
+        'name': name,
+        'tel': tel
+    }
+
+    return person
+
+
+def write_json(person_dict):
+    try:
+        data = json.load(open("persons.json"))  # [{'name': 'meckcda', 'tel': '2257386866'}, ...]
+    except FileNotFoundError:
+        data = []
+
+    data.append(person_dict)
+    with open('persons.json', 'w') as f:
+        json.dump(data, f, indent=2)
+
+
+for i in range(5):
+    write_json(gen_person())
+
+# persons = []
+# for i in range(5):
+#     persons.append(gen_person())
+# print(persons)
