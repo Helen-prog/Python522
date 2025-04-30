@@ -5935,48 +5935,247 @@
 # print(data2)
 
 
-import json
-from random import choice
-
-
-def gen_person():
-    name = ''
-    tel = ''
-
-    letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'k', 'l', 'm', 'n']
-    nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
-
-    while len(name) != 7:
-        name += choice(letters)
-    # print(name)
-
-    while len(tel) != 10:
-        tel += choice(nums)
-    # print(tel)
-
-    person = {
-        'name': name,
-        'tel': tel
-    }
-
-    return person
-
-
-def write_json(person_dict):
-    try:
-        data = json.load(open("persons.json"))  # [{'name': 'meckcda', 'tel': '2257386866'}, ...]
-    except FileNotFoundError:
-        data = []
-
-    data.append(person_dict)
-    with open('persons.json', 'w') as f:
-        json.dump(data, f, indent=2)
-
-
-for i in range(5):
-    write_json(gen_person())
+# import json
+# from random import choice
+#
+#
+# def gen_person():
+#     name = ''
+#     tel = ''
+#
+#     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'k', 'l', 'm', 'n']
+#     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(name) != 7:
+#         name += choice(letters)
+#     # print(name)
+#
+#     while len(tel) != 10:
+#         tel += choice(nums)
+#     # print(tel)
+#
+#     person = {
+#         'name': name,
+#         'tel': tel
+#     }
+#
+#     return person
+#
+#
+# def write_json(person_dict):
+#     try:
+#         data = json.load(open("persons.json"))  # [{'name': 'meckcda', 'tel': '2257386866'}, ...]
+#     except FileNotFoundError:
+#         data = []
+#
+#     data.append(person_dict)
+#     with open('persons.json', 'w') as f:
+#         json.dump(data, f, indent=2)
+#
+#
+# for i in range(5):
+#     write_json(gen_person())
 
 # persons = []
 # for i in range(5):
 #     persons.append(gen_person())
 # print(persons)
+
+
+# import json
+# from random import choice
+#
+#
+# def gen_person():
+#     name = ''
+#     tel = ''
+#
+#     letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'k', 'l', 'm', 'n']
+#     nums = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+#
+#     while len(name) != 7:
+#         name += choice(letters)
+#     # print(name)
+#
+#     while len(tel) != 10:
+#         tel += choice(nums)
+#     # print(tel)
+#
+#     person = {
+#         'name': name,
+#         'tel': tel
+#     }
+#
+#     return person, tel
+#
+#
+# def write_json(person_dict, num):  # {"name": "...", "tel": "..."},  "1580892771"
+#     try:
+#         data = json.load(open("persons_dict.json"))
+#         # {"5714085368": {"name": "...", "tel": "..."},
+#         # "8228754779": {"name": "...", "tel": "..."}
+#         # "1580892771": {"name": "...", "tel": "..."}}
+#     except FileNotFoundError:
+#         data = {}  #
+#
+#     data[num] = person_dict
+#     with open('persons_dict.json', 'w') as f:
+#         json.dump(data, f, indent=2)
+#
+#
+# # for i in range(5):
+#
+# person1, tel1 = gen_person()
+# write_json(person1, tel1)
+# write_json(gen_person()[0], gen_person()[1])
+
+# import json
+#
+#
+# class Student:
+#     def __init__(self, name, marks):
+#         self.name = name
+#         self.marks = marks
+#
+#     def __str__(self):
+#         # st = ''
+#         # for i in self.marks:
+#         #     st += str(i) + ", "
+#         # return f"Студент => {self.name}: {st[:-2]}"
+#         st = ", ".join(map(str, self.marks))
+#         return f"Студент => {self.name}: {st}"
+#
+#     def add_mark(self, mark):
+#         self.marks.append(mark)
+#
+#     def delete_mark(self, index):
+#         self.marks.pop(index)
+#
+#     def edit_marks(self, index, new_mark):
+#         self.marks[index] = new_mark
+#
+#     def average_mark(self):
+#         return round(sum(self.marks) / len(self.marks), 2)
+#
+#     def dump_to_json(self):
+#         data = {"name": self.name, "marks": self.marks}
+#         with open(self.get_file_name(), "w") as f:
+#             json.dump(data, f)
+#
+#     def get_file_name(self):
+#         return self.name + ".json"
+#
+#     def load_from_file(self):
+#         with open(self.get_file_name(), "r") as f:
+#             print(json.load(f))
+#
+#
+# class Group:
+#     def __init__(self, students, group):
+#         self.students = students
+#         self.group = group
+#
+#     def __str__(self):
+#         st = "\n".join(map(str, self.students))
+#         return f"\nГруппа: {self.group}\n{st}"
+#
+#     def add_student(self, student):
+#         self.students.append(student)
+#
+#     def remove_student(self, index):
+#         return self.students.pop(index)
+#
+#     @staticmethod
+#     def change_group(gr1, gr2, index):
+#         return gr2.add_student(gr1.remove_student(index))
+#
+#     def get_file_name(self):
+#         return self.group.lower().replace(" ", "-") + ".json"
+#
+#     def dump_to_json(self):
+#         data = [{'name': student.name, 'marks': student.marks} for student in self.students]
+#         with open(self.get_file_name(), 'w') as f:
+#             json.dump(data, f, indent=2)
+#
+#     def load_from_file(self):
+#         with open(self.get_file_name(), "r") as f:
+#             print(json.load(f))
+#
+#
+# st1 = Student("Bodnya", [5, 4, 3, 4, 5, 3])
+# # print(st1)
+# # st1.add_mark(4)
+# # print(st1)
+# # st1.delete_mark(3)
+# # print(st1)
+# # st1.edit_marks(2, 4)
+# # print(st1)
+# # print(st1.average_mark())
+#
+# st2 = Student("Nikolaenko", [2, 3, 5, 4, 2])
+# st3 = Student("Birukov", [3, 5, 3, 2, 5, 4])
+# # st1.dump_to_json()
+# # st1.load_from_file()
+#
+# sts1 = [st1, st2]
+# group1 = Group(sts1, "ГК Python")
+# # # print(group1)
+# # # print()
+# # group1.add_student(st3)
+# # # print(group1)
+# # # print()
+# # group1.remove_student(1)
+# # # print(group1)
+# sts2 = [st2]
+# group2 = Group(sts2, "ГК Web")
+# # print(group1)
+# # print(group2)
+# Group.change_group(group1, group2, 0)
+# print(group1)
+# print(group2)
+# group2.dump_to_json()
+# group2.load_from_file()
+
+
+import requests
+import json
+
+
+response = requests.get("https://jsonplaceholder.typicode.com/todos")
+todos = json.loads(response.text)
+# print(todos)
+
+
+todos_by_user = {}  # {1: 11, 2: 3}
+
+for todo in todos:
+    if todo["completed"]:
+        try:
+            todos_by_user[todo["userId"]] += 1
+        except KeyError:
+            todos_by_user[todo["userId"]] = 1
+
+print(todos_by_user)
+
+top_users = sorted(todos_by_user.items(), key=lambda x: x[1], reverse=True)
+print(top_users)
+
+max_complete = top_users[0][1]
+print(max_complete)
+
+users = []
+for user, num_complete in top_users:
+    if num_complete < max_complete:
+        break
+    users.append(str(user))
+
+# users = ["11"]
+print(users)
+
+max_users = " and ".join(users)
+print(max_users)
+
+
+e = "s" if len(users) > 1 else ""
+print(f"User{e} {max_users} completed {max_complete} TODOs")
+
