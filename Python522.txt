@@ -182,3 +182,60 @@ geometry  -> pip
 	sq.py
 	trian.py
 
+
+rect.py  =>  __main__
+
+main.py  =>  geometry.rect
+
+
+Упаковка (Сериализация) и распаковка (Десериализация) данных
+1. marshal  (.pyc)
+2. pickle
+3. json
+
+dump() - сохраняет данные в открытый файл
+load() - считывает данные из файла
+
+dumps() - сохраняет данные в строку
+loads() - считывает данные из строки
+
+https://jsonplaceholder.typicode.com/todos
+https://jsonplaceholder.typicode.com
+
+requests
+
+pip install requests
+
+Компоненты MVC:
+• Модель (Model) — этот компонент отвечает за данные, а также 
+определяет структуру приложения. 
+• Представление (View) — этот компонент отвечает за 
+взаимодействие с пользователем. То есть код компонента 
+view определяет внешний вид приложения.
+• Контроллер (Controller) — этот компонент отвечает за связь между 
+model и view. По сути, это мозг MVC-приложения.
+
+CSV (Comma Separated Values - переменные, разделенные запятыми)
+
+data.csv
+
+Имя,Профессия,Год рождения
+Виктор,Веб-дизайнер,1995
+Игорь,Программист,1983
+Роман,Адимнистратор,1990
+
+Имя;Профессия;Год рождения
+Виктор;Веб-дизайнер;1995
+Игорь;Программист;1983
+
+csv.reader  => []
+csv.DictReader  => {}
+
+csv.writer  => []
+csv.DictWriter  => {}
+
+articles
+	project_articles.py
+	controller.py
+	view.py
+	model.py
