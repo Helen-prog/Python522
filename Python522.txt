@@ -239,3 +239,60 @@ articles
 	controller.py
 	view.py
 	model.py
+	
+
+{
+	"название": qqq,
+	"автор": www,
+	"количество страниц": 5,
+	"описание": eee
+}
+
+['qqq', 'www', '5', 'eee'] => 'qqq', 'www', '5', 'eee'
+
+{
+	title: qqq,
+	author: www,
+	pages: 5,
+	description: eee
+}
+
+{
+	qqq: {
+		title: qqq,
+		author: www,
+		pages: 5,
+		description: eee
+	},
+	aaa: {
+		title: aaa,
+		author: www,
+		pages: 5,
+		description: eee
+	}
+}
+
+
+*.db, *.sqlite
+
+SELECT [ALL | DISTINCT] {* | столбец1 [, столбец2]}
+FROM таблица1 [, таблица2]
+[WHERE условие]
+	AND | OR
+	поле [NOT] BETWEEN начальное_значение AND конечное_значение
+	поле [NOT] LIKE шаблон_строки
+		% - любое кол-во символов
+		_ - один любой символов
+	поле [NOT] GLOB регулярное_выражение
+		* - любое кол-во символов
+		? - один любой символов
+		. - соответствует любому одиночному символу
+		[симвлы] - один символ из перечисленных [abc]
+		[начальный_диапазон-конечный диапазон] - один символ 
+				из диапазоназона [a-zA-z0-9]
+		[^...] - один символ, который не входит перечисления
+	поле IS [NOT] NULL
+	поле IS [NOT]
+	поле [NOT] IN (набор_значений | выражение)
+[ORDER BY {[col_name | col_number [ASC | DESC]]}]	
+		
