@@ -6435,7 +6435,7 @@ import csv
 #    """)
 
 
-import sqlite3
+# import sqlite3
 
 # with sqlite3.connect("db_3.db") as con:
 #     cur = con.cursor()
@@ -6458,4 +6458,12 @@ import sqlite3
 #     print(res1)
 
 
+lst = ['a', 'b', 'c']
+# print(sum(lst))
 
+# lst1 = [1, 2, 3]
+res = 0
+for i in lst:
+    res += i
+
+print(res)
