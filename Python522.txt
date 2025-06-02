@@ -352,3 +352,12 @@ SELECT столбцы
 FROM таблица1
 	LEFT | RIGHT JOIN таблица2 ON связь_между_таблицами
 	LEFT | RIGHT JOIN таблица3 ON связь_между_таблицами
+	
+	
+index.html
+
+index_new.html
+
+align = left | center | right | justify 
+
+<!--  -->  Ctrl + /

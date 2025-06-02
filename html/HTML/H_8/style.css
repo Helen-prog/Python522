@@ -1,0 +1,19 @@
+.html{
+	font-size: 16px;
+}
+.header{
+	background-color: orange;
+	padding: 10px 0;
+	text-align: center;
+}
+.footer{
+	background-color: yellowgreen;
+	padding: 10px 0;
+	text-align: center;
+}
+.main{
+	width: 100%;
+	max-width: 1400px;
+	min-width: 320px;
+	margin: 0 auto;	
+}

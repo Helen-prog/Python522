@@ -1,0 +1,25 @@
+a{
+	/*display: block; */
+	/*display: inline; */
+	
+	text-decoration: none; 
+	width: 150px;
+	padding: 5px; 
+	margin: 2px;
+	border: 3px double #AE8B8B;
+	text-align: center;
+	font-family: Verdana, Arial, sans;
+	font-weight: bold;
+	color:#937676;
+	background: #FFCCCC;
+	
+} 
+a:hover{
+	background: #FFE8E8;
+}
+	
+a.menu{
+	/*display: none; */
+	/*visibility:hidden;*/
+	/*visibility:visible;*/
+}
