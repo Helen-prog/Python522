@@ -361,3 +361,9 @@ index_new.html
 align = left | center | right | justify 
 
 <!--  -->  Ctrl + /
+
+Ctrl + H
+
+align="
+style="text-align: 
+
