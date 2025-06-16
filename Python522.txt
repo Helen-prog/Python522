@@ -367,3 +367,24 @@ Ctrl + H
 align="
 style="text-align: 
 
+Растровые изображения:
+- *.jpg (jpeg)
+- *.png
+- *.gif
+Векторные изображения:
+- *.svg
+
+#FF00FF
+#F0F
+
+0-9A-F
+red
+green
+blue
+rgba(255, 0, 0)
+alpha от 0 до 1
+
+top | right | bottom | left | center
+
+
+top | right | bottom | left
