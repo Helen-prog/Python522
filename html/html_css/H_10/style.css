@@ -1,0 +1,41 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+.container{  /* флекс-контейнер */
+	background: yellow;
+	margin: 100px auto;
+	padding: 10px 0;
+	height: 400px;	
+	display: flex;
+	/* flex-direction: column; */
+	flex-wrap: wrap;
+	/* justify-content: flex-end; */
+	/* align-items: flex-start; */
+	/* align-content: flex-end; */
+}
+
+.element{   /* флекс-элементы */
+	border: 1px solid black;
+	padding: 10px 20px;
+	box-sizing: border-box;
+	margin: 20px;	
+	/* flex-basis: 300px; */
+}
+
+.one{
+	/* font-size: 40px; */
+	/* align-self: flex-start; */
+	/* order: -2; */
+	
+	/* width: 200px; */
+	margin-right: auto;
+}
+.two{
+	/* order: 1; */
+}
+.three{
+	/* order: -1; */
+	margin-left: auto;
+}

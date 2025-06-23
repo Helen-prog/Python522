@@ -388,3 +388,11 @@ top | right | bottom | left | center
 
 
 top | right | bottom | left
+
+file:///E:/Python522/html/html_css/form/form.html
+file:///E:/Python522/html/html_css/form/form.html?fio=Marina&psw=123456&pol=on#file.py
+
+file:///E:/Python522/html/html_css/form/form.html#file.py
+file:///E:/Python522/html/html_css/form/form.html?psw=123456&pol=on#file.py
+
+Ctrl + H 
