@@ -19,6 +19,7 @@ body {
 
 .top__block {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
 }
@@ -329,3 +330,92 @@ button{
     padding: 15px 40px;
     cursor: pointer;
 }
+
+/* consulting  */
+.consulting {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    
+}
+.cont {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cont h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+    margin: 0;
+}
+.cont p {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.2px;
+    color: #737373;
+}
+.cont button {
+    width: 163px;
+    height: 58px;
+    background: #FFA62B;
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: 0.2px;
+    color: #FFFFFF;
+    border: 0;
+}
+/* footer */
+.footer {
+    background: #252B42;
+    padding: 53px 0;
+}
+.box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.box h3 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    color: #FFFFFF;
+    margin: 0;
+}
+.box img {
+    margin-left: 20px;
+}
+
+
+
+@media(max-width: 1050px){
+    .wrap{
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .choose__block, .team__block{
+        justify-content: space-evenly;
+    }
+}
+
+@media(max-width: 760px){
+    .choose__element, .team__element{
+        flex-basis: 100%;
+    }
+
+    .top h1{
+        font-size: 54px;
+    }
+
+    br{
+        display: none;
+    }
+}
+
