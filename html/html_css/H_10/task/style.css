@@ -419,3 +419,29 @@ button{
     }
 }
 
+@media(max-width: 714px){
+    input, select{
+        flex-basis: 100%;
+        margin-right: 0;
+    }
+
+    textarea{
+        margin-right: 0;
+    }
+
+    button, .cont button{
+        width: 100%;
+    }
+}
+
+@media(max-width: 454px){
+    .top__btn a{
+        display: block;
+        margin: 25px 40px;
+    }
+
+    .top h1{
+        font-size: 40px;
+        line-height: 57px;
+    }
+}

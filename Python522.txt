@@ -396,3 +396,11 @@ file:///E:/Python522/html/html_css/form/form.html#file.py
 file:///E:/Python522/html/html_css/form/form.html?psw=123456&pol=on#file.py
 
 Ctrl + H 
+
+pip install beautifulsoup4  или  bs4
+
+I:\Python\ООП\ООП_7
+
+file:///E:/Python522/index.html
+
+pip install lxml
