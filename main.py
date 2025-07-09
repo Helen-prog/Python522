@@ -6606,52 +6606,114 @@ import csv
 #     main()
 
 
-from bs4 import BeautifulSoup
-import requests
-import re
-import csv
+# from bs4 import BeautifulSoup
+# import requests
+# import re
+# import csv
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refined(s):
+#     return re.sub(r"\D+", "", s)
+#
+#
+# def write_csv(data):
+#     with open('plugins.csv', "a") as f:
+#         writer = csv.writer(f, delimiter=",", lineterminator="\r")
+#         writer.writerow([data["name"], data['url'], data['rating'], data['snippet']])
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find_all("section", class_="plugin-section")[2]
+#     plugins = p1.find_all("li")
+#     for plugin in plugins:
+#         try:
+#             name = plugin.find("h3", class_="entry-title").text
+#         except AttributeError:
+#             name = ""
+#         url = plugin.find("h3", class_="entry-title").find("a").get("href")
+#         rating = plugin.find("span", class_="rating-count").text
+#         replace_rating = refined(rating)
+#         snippet = plugin.find("div", class_="entry-excerpt").text.strip()
+#
+#         data = {"name": name, "url": url, "rating": replace_rating, "snippet": snippet}
+#         write_csv(data)
+#
+#
+# def main():
+#     url = "https://ru.wordpress.org/plugins/"
+#     get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
 
 
-def get_html(url):
-    r = requests.get(url)
-    return r.text
+# from bs4 import BeautifulSoup
+# import requests
+# import csv
+#
+#
+# def get_html(url):
+#     r = requests.get(url)
+#     return r.text
+#
+#
+# def refind(s):
+#     return s.split()[-1]
+#
+#
+# def write_csv(data):
+#     with open('plugins_list.csv', 'a') as f:
+#         writer = csv.writer(f, delimiter=",", lineterminator="\r")
+#         writer.writerow([data['name'],
+#                          data['url'],
+#                          data['active'],
+#                          data['tested']])
+#
+#
+# def get_data(html):
+#     soup = BeautifulSoup(html, "lxml")
+#     p1 = soup.find_all("li", class_="wp-block-post")
+#     for el in p1:
+#         name = el.find("h3", class_="entry-title").text
+#         url = el.find("h3", class_="entry-title").find("a")['href']
+#         active = el.find("span", class_="active-installs").text.strip()
+#         try:
+#             texted = el.find("span", class_="tested-with").text.strip()
+#             test = refind(texted)
+#         except AttributeError:
+#             test = ""
+#         data = {
+#             'name': name,
+#             'url': url,
+#             'active': active,
+#             'tested': test
+#         }
+#         write_csv(data)
+#
+#
+# def main():
+#     for i in range(1, 50):
+#         url = f"https://ru.wordpress.org/plugins/browse/popular/page/{i}/"
+#         get_data(get_html(url))
+#
+#
+# if __name__ == '__main__':
+#     main()
 
-
-def refined(s):
-    return re.sub(r"\D+", "", s)
-
-
-def write_csv(data):
-    with open('plugins.csv', "a") as f:
-        writer = csv.writer(f, delimiter=",", lineterminator="\r")
-        writer.writerow([data["name"], data['url'], data['rating'], data['snippet']])
-
-
-def get_data(html):
-    soup = BeautifulSoup(html, "lxml")
-    p1 = soup.find_all("section", class_="plugin-section")[2]
-    plugins = p1.find_all("li")
-    for plugin in plugins:
-        try:
-            name = plugin.find("h3", class_="entry-title").text
-        except AttributeError:
-            name = ""
-        url = plugin.find("h3", class_="entry-title").find("a").get("href")
-        rating = plugin.find("span", class_="rating-count").text
-        replace_rating = refined(rating)
-        snippet = plugin.find("div", class_="entry-excerpt").text.strip()
-
-        data = {"name": name, "url": url, "rating": replace_rating, "snippet": snippet}
-        write_csv(data)
+from parsers import Parser
 
 
 def main():
-    url = "https://ru.wordpress.org/plugins/"
-    get_data(get_html(url))
+    pars = Parser('https://www.ixbt.com/live/index/news/', 'news.txt')
+    pars.run()
 
 
 if __name__ == '__main__':
     main()
-
-
-
