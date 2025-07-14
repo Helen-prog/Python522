@@ -404,3 +404,21 @@ I:\Python\ООП\ООП_7
 file:///E:/Python522/index.html
 
 pip install lxml
+
+https://ru.wordpress.org/plugins/browse/popular/page/1/
+https://ru.wordpress.org/plugins/browse/popular/page/2/
+https://ru.wordpress.org/plugins/browse/popular/page/3/
+
+https://ru.wordpress.org/plugins/browse/popular/page/49/
+
+
+parsers.py
+
+Ctrl + /
+- строчный комментарий
+
+Shift + Alt + A 
+- блочный комментарий
+
+
+
