@@ -1,0 +1,43 @@
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+<body>
+<form action="#test.php" method="post" id="f1"> 
+  <p>Логин: <input id="login" name="login" type="text" onKeyUp="check('login', reg_login)" style="outline: none;" /></p>
+  <p>Имя: <input id="name" name="name" type="text" onKeyUp="check('name', reg_name)" style="outline: none;" /></p>
+  <p>Дата: <input id="date" name="date" type="text" onKeyUp="check('date', reg_date)" style="outline: none;" /></p>
+  <p>Пароль: <input id="pass" name="pass" type="text" onKeyUp="check('pass', reg_pass)" style="outline: none;" /></p>
+</form>
+
+
+<script>
+// let reg_login = /^[A-Za-z_-]{3,25}$/;    
+let reg_login = /^[a-z_-]{3,25}$/i;    
+let reg_name = /^[А-яЁё]{2,25}$/;     
+let reg_date = /^(\d){4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/
+let reg_pass = /^[\w+*.-]{6,25}$/;   
+
+/*
+Дата: 2022-01-31
+Логин: английские буквы в любом регистре, подчеркивание и дефис
+Имя: русские буквы в любом регистре
+Пароль: английские буквы в любом регистре, цифры, знаки: +*_- и точка 
+*/
+
+function check(id, reg){ //функция проверки полей, принимает значение id поля и регулярное выражение для него
+  let st = document.getElementById(id);
+  let v = document.getElementById(id).value;   
+  
+  if (reg.test(v)){
+	st.style.border = '1px solid green';
+    return true;
+  }
+  else {
+	st.style.border = '1px solid red';
+    return false;
+  }
+}
+</script>
+</body>
+</html>

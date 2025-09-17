@@ -422,3 +422,61 @@ Shift + Alt + A
 
 
 
+DOM - Document Object Model — «объектная модель документа»
+
+file:///E:/Python522/js/index.html?name1=dfsdfsdf#test.php
+file:///E:/Python522/js/index.html?name1=dscasdas#test.php
+
+
+JSON - 
+
+JSON.stringify - преобразует объект JS в JSON (сериализация)
+JSON.parse - преобразует объект JSON в JS (десериализация)
+
+AJAX:
+ 
+Asynchronous
+JavaScript
+AND
+XML (JSON)
+
+
+http://localhost/ajax/
+
+current.json
+
+{
+	"current": {
+		"usd": 74
+	}
+}
+
+bom - browser object model
+
+cmd
+
+SPA - single page application
+
+npx create-react-app .
+- создать проект
+
+npm start
+- запустить сервер
+
+Ctrl + C 
+- остановить сервер
+
+javascript  javascriptreact
+
+one
+	Header.js
+	Header.css
+	Article.js
+	Article.css
+	Footer.js
+	
+Способ 1: Изменить политику выполнения (рекомендуется)
+Откройте PowerShell от имени администратора и выполните:
+powershell
+
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
