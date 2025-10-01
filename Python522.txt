@@ -469,14 +469,67 @@ Ctrl + C
 javascript  javascriptreact
 
 one
-	Header.js
-	Header.css
-	Article.js
-	Article.css
-	Footer.js
+	src
+		header
+			Header.js
+			Header.css
+		article
+			Article.js
+			Article.css
+		footer
+			Footer.js
 	
 Способ 1: Изменить политику выполнения (рекомендуется)
 Откройте PowerShell от имени администратора и выполните:
 powershell
 
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+two
+	src
+		Header.js
+		Nav.js
+		Nav.css
+		Article.js
+		Footer.js
+		
+State – позволяет хранить внутреннее состояние компонента.
+		
+Hello.js
+Length.js
+Form.js
+Range.js
+
+Posts.js
+Post.js
+
+Test.js
+User.js
+
+
+
+layout
+	Header.js
+	Header.css
+	Footer.js
+	Footer.css
+	Main.js
+	Main.css
+components
+	MovieList.js
+	MovieList.css
+	Movie.js
+	Movie.css
+	Preloader.js
+	Preloader.css
+	Search.js
+	Search.css
+	
+	
+	
+	
+http://www.omdbapi.com/?apikey=2a56611e&s=matrix
+	
+	
+
+
