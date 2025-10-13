@@ -528,8 +528,30 @@ components
 	
 	
 	
-http://www.omdbapi.com/?apikey=2a56611e&s=matrix
+http://www.omdbapi.com/?apikey=2a56611e&s=matrix&type=game&page=1
+http://www.omdbapi.com/?apikey=2a56611e&s=matrix&page=1
 	
-	
+http://www.omdbapi.com/?apikey=2a56611e&s=${str}
+
+
+prodject_video
+
+npm install gh-pages --save-dev
+
+npm run deploy
+
+
+npx create-react-app .
+
+Хук состояния
+
+import {useState} from 'react';
+
+let [value, setValue] = useState("Hello");
+let [count, setCount] = useState(0);
+
+
+
+
 
 

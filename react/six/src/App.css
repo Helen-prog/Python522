@@ -1,0 +1,67 @@
+@import "~react-image-gallery/styles/css/image-gallery.css";
+
+h1{
+    margin: 40px;
+}
+
+.collection {
+    border: 1px solid gray;
+    border-radius: 6px;
+    margin: 20px 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.tags {
+    display: flex;
+    list-style: none;
+}
+
+.tags li {
+    border: 1px solid #444;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.active {
+    background-color: #444;
+    color: #FFF;
+}
+
+.search {
+    margin: 20px;
+}
+
+.search-input {
+    padding: 10px 20px;
+    box-sizing: border-box;
+    border-radius: 6px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid gray;
+    font-size: 20px;
+}
+
+.image-gallery-wrapper {
+    margin-top: 5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.collection {
+     max-width: 800px;
+}
+
+.image-gallery-thumbnail {
+    width: 150px;
+}

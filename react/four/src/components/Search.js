@@ -31,11 +31,31 @@ class Search extends React.Component {
     nextPage = () => {
         this.setState(
             { page: this.state.page + 1 },
-            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page) }
+            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page)}
+        )
+    }
+
+    setPage = (num) => {
+        this.setState(
+            {page: num},
+            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page)}
         )
     }
 
     render() {
+        let limit = 10;
+        let totalPages = Math.ceil(this.props.totalCount / limit);  // кол-во страниц
+
+        let lastIndex = totalPages <= 10 ? totalPages : this.state.page + limit;
+        console.log(lastIndex);
+        
+        let firstIndex =  totalPages <= 10 ? lastIndex - limit + lastIndex - 1 : lastIndex - limit;
+                
+        let num = [];
+        for(let i=0; i <= totalPages; i++){
+            num.push(i);
+        }
+        // console.log("num", num);
         return (
             <>
                 <div className="search">
@@ -59,6 +79,20 @@ class Search extends React.Component {
                 </div>
                 <div className="navigation">
                     <button className="btn" onClick={this.prevPage}>Prev</button>
+
+                    <div className="items">
+                        {
+                            num.slice(firstIndex, lastIndex + 1).map((el, index) => (
+                                <button 
+                                className="btn"
+                                key={index}
+                                style={{background: this.state.page !== el ? "" : "gray"}}
+                                onClick={() => this.setPage(el)}
+                                >{el}</button>
+                            ))
+                        }
+                    </div>
+
                     <button className="btn" onClick={this.nextPage}>Next</button>
                 </div>
             </>
