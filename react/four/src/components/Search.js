@@ -31,14 +31,14 @@ class Search extends React.Component {
     nextPage = () => {
         this.setState(
             { page: this.state.page + 1 },
-            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page)}
+            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page) }
         )
     }
 
     setPage = (num) => {
         this.setState(
-            {page: num},
-            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page)}
+            { page: num },
+            () => { this.props.searchMovie(this.state.search, this.state.type, this.state.page) }
         )
     }
 
@@ -48,11 +48,11 @@ class Search extends React.Component {
 
         let lastIndex = totalPages <= 10 ? totalPages : this.state.page + limit;
         console.log(lastIndex);
-        
-        let firstIndex =  totalPages <= 10 ? lastIndex - limit + lastIndex - 1 : lastIndex - limit;
-                
+
+        let firstIndex = totalPages <= 10 ? lastIndex - limit + lastIndex - 1 : lastIndex - limit;
+
         let num = [];
-        for(let i=0; i <= totalPages; i++){
+        for (let i = 0; i <= totalPages; i++) {
             num.push(i);
         }
         // console.log("num", num);
@@ -83,11 +83,11 @@ class Search extends React.Component {
                     <div className="items">
                         {
                             num.slice(firstIndex, lastIndex + 1).map((el, index) => (
-                                <button 
-                                className="btn"
-                                key={index}
-                                style={{background: this.state.page !== el ? "" : "gray"}}
-                                onClick={() => this.setPage(el)}
+                                <button
+                                    className="btn"
+                                    key={index}
+                                    style={{ background: this.state.page !== el ? "" : "gray" }}
+                                    onClick={() => this.setPage(el)}
                                 >{el}</button>
                             ))
                         }

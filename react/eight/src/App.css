@@ -1,0 +1,27 @@
+ul{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  list-style: none;
+  font-weight: bold;
+}
+
+li{
+  margin-right: 20px;
+}
+
+h1, h2, h3{
+  text-align: center;
+}
+
+a.active{
+  color: red;
+}
+
+.my{
+  color: blue;
+}
+
+.orange{
+  color: orange;
+}

@@ -545,13 +545,53 @@ npx create-react-app .
 
 Хук состояния
 
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 
 let [value, setValue] = useState("Hello");
 let [count, setCount] = useState(0);
 
 
+Counter.js
+Person.js
+Modal.js
+Modal.css
+Item.js
+Task.js
+Form.js
+Text.js
 
 
+http://localhost:3000/?
 
 
+components
+	quizzes
+		Quizzes.js
+		Quizzes.css
+	progress
+		ProgressBar.js
+		ProgressBar.css
+	result
+		Result.js
+		Result.css
+		
+		
+components
+	users
+		Users.js
+		User.js
+		Users.css
+	success
+		Success.js
+		Success.css
+
+
+React Router
+
+
+npx create-react-app .
+npm install react-router-dom
+
+Home.js
+About.js
+Articles.js
