@@ -6707,13 +6707,108 @@ import csv
 # if __name__ == '__main__':
 #     main()
 
-from parsers import Parser
+# from parsers import Parser
+#
+#
+# def main():
+#     pars = Parser('https://www.ixbt.com/live/index/news/', 'news.txt')
+#     pars.run()
+#
+#
+# if __name__ == '__main__':
+#     main()
+
+from jinja2 import Template
+
+# name = "Игорь"
+# age = 28
+#
+# tm = Template("Мне {{ a*2 }} лет. Меня зовут {{ n.upper() }}.")
+# msg = tm.render(n=name, a=age)
+#
+# print(msg)
+
+# per = {"name": "Игорь", "age": 28}
+#
+# tm = Template("Мне {{ p.age }} лет. Меня зовут {{ p['name'] }}.")
+# msg = tm.render(p=per)
+#
+# print(msg)
+
+# class Person:
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#
+#     def get_name(self):
+#         return self.name
+#
+#
+# per = Person("Игорь", 28)
+#
+# # tm = Template("Мне {{ p.age }} лет. Меня зовут {{ p['name'] }}.")
+# tm = Template("Мне {{ p.age }} лет. Меня зовут {{ p.get_name() }}.")
+# msg = tm.render(p=per)
+#
+# print(msg)
+
+# cities = [
+#     {'id': 1, 'city': 'Москва'},
+#     {'id': 2, 'city': 'Смоленск'},
+#     {'id': 3, 'city': 'Минск'},
+#     {'id': 4, 'city': 'Воронеж'},
+#     {'id': 5, 'city': 'Ярославль'},
+# ]
+#
+# link = """
+# <select>
+# {% for c in cities %}
+#     {% if c.id > 3 %}
+#         <option value="{{ c['id'] }}">{{ c.city }}</option>
+#     {% elif c.city == 'Москва' %}
+#         {{ c.city }}
+#     {% else %}
+#         <option>{{ c.city }}</option>
+#     {% endif %}
+# {% endfor %}
+# </select>
+# """
+#
+# tm = Template(link)
+# msg = tm.render(cities=cities)
+#
+# print(msg)
 
 
-def main():
-    pars = Parser('https://www.ixbt.com/live/index/news/', 'news.txt')
-    pars.run()
+# cars = [
+#     {'model': 'Audi', 'price': 23000},
+#     {'model': 'Skoda', 'price': 17000},
+#     {'model': 'Renault', 'price': 44000},
+#     {'model': 'Wolksvagen', 'price': 21000}
+# ]
+#
+# # cars = [9, 8, 6, 5, 4, 2]
+#
+# # tpl = "{{ cs | max(attribute='price') }}"
+# tpl = "{{ (cs | max(attribute='price')).price }}"
+# tm = Template(tpl)
+# msg = tm.render(cs=cars)
+#
+# print(msg)
 
 
-if __name__ == '__main__':
-    main()
+html = """
+{% macro input_func(name, value='', type='text', size=20) %}
+    <input type="{{ type }}" name="{{ name }}" value="{{ value }}" size="{{ size }}">
+{% endmacro %}
+
+
+<p> {{ input_func('username') }} </p>
+<p> {{ input_func('email') }} </p>
+<p> {{ input_func('password', type='password') }} </p>
+"""
+
+tm = Template(html)
+msg = tm.render()
+
+print(msg)
