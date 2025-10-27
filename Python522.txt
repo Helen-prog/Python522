@@ -595,7 +595,9 @@ npm install react-router-dom
 Home.js
 About.js
 Articles.js
+Article.js
 AboutInfo.js
+NotFoundPage.js
 
 components
 	Layout.js
@@ -603,3 +605,61 @@ components
 
 http://localhost:3000//
 http://localhost:3000/about
+http://localhost:3000/about/2
+
+http://localhost:3000/articles-us
+
+Шаблонизатор
+Jinja
+
+pip install jinja2
+
+{{ переменная }}
+
+{% for c in cities %}
+
+{% endfor %}
+
+Мактроопределение
+
+{% macro name(...) %}
+
+{% endmacro %}
+
+
+{{ name(...) }}
+
+templates
+	index.html
+	header.html
+	footer.html
+	
+	page.html
+	about.html
+	
+Django
+
+pip install django
+
+cd first
+
+django-admin startproject password_generator_project
+- создание проекта
+
+python manage.py runserver
+-запуск сервера
+	
+Ctrl + C
+-остановить сервер
+
+python manage.py startapp generator
+- создаем приложение
+
+
+templates
+	generator
+		home.html
+		
+http://127.0.0.1:8000/?length=2
+
+

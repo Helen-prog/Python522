@@ -1,0 +1,29 @@
+{% extends 'generator/base.html' %}
+
+{% block content %}
+<h1>Генератор паролей</h1>
+<form action="{% url 'psw' %}">
+    <p><select name="length">
+        {% for i in lst %}
+        <option value="{{ i }}">{{ i }}</option>
+        {% endfor %}
+    </select> Количество символов
+    </p>
+    <p>
+        <input type="checkbox" name="uppercase" id="upper">
+        <label for="upper">Верхний регистр</label>
+    </p>
+
+    <p>
+        <input type="checkbox" name="numbers" id="num">
+        <label for="num">Цифры</label>
+    </p>
+
+    <p>
+        <input type="checkbox" name="special" id="spec">
+        <label for="spec">Спецсимволы</label>
+    </p>
+
+    <input type="submit" value="Сгенерировать пароль">
+</form>
+{% endblock %}
