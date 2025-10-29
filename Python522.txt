@@ -642,6 +642,7 @@ Django
 pip install django
 
 cd first
+cd password_generator_project
 
 django-admin startproject password_generator_project
 - создание проекта
@@ -662,4 +663,30 @@ templates
 		
 http://127.0.0.1:8000/?length=2
 
+cd ../..
 
+
+django-admin startproject personal_portfolio
+
+python manage.py startapp skills
+python manage.py startapp blog
+
+pip install Pillow
+
+python manage.py makemigrations
+python manage.py migrate
+
+python manage.py createsuperuser
+- создать суперпользователя
+
+http://127.0.0.1:8000/admin
+
+http://127.0.0.1:8000/blog/1
+
+
+django-admin startproject todos
+python manage.py startapp todo
+
+
+r2l91RXfpeB5XzwZZT2JaZiZ3La83uFnkJZMwMEX6YbnFJ4HjvVfYGbxmiDBpHcT
+K4i94lZGIRmOuL9rUaFFmSY5kSqx9Lw8DLWMzgGopBW6cVH9eMybazRDDpT0vY3E
