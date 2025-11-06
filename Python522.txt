@@ -699,3 +699,28 @@ K4i94lZGIRmOuL9rUaFFmSY5kSqx9Lw8DLWMzgGopBW6cVH9eMybazRDDpT0vY3E
  <p>Upservice – это платформа для контроля и управления вашим бизнесом.</p>
  <p>Помогает находить слабые стороны в работе сотрудников и улучшать уровень обслуживания клиентов.</p>
 </div>
+
+
+models.CASCADE - если пользователь будет удален, то удалятся все его задачи
+
+models.PROTECT - запрещает удаление пользователя, пока у него есть задачи
+
+models.SET_NULL - задачи останутся в БД, но значение в поле задачи изменится на NULL
+
+models.SET_DEFAULT - задачи останутся в БД, но значение в поле задачи изменится на по умолчанию
+
+
+http://127.0.0.1:8000/create/
+
+
+django-admin startproject devsearch
+
+python manage.py startapp projects
+
+base.html
+navbar.html
+
+
+OneToOneField - связь один к одному 
+ForeingKey - связь один ко многим
+ManyToManyField - связь многие ко многим
