@@ -724,3 +724,4 @@ navbar.html
 OneToOneField - связь один к одному 
 ForeingKey - связь один ко многим
 ManyToManyField - связь многие ко многим
+
