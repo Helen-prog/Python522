@@ -716,6 +716,7 @@ http://127.0.0.1:8000/create/
 django-admin startproject devsearch
 
 python manage.py startapp projects
+python manage.py startapp users
 
 base.html
 navbar.html
@@ -725,3 +726,20 @@ OneToOneField - связь один к одному
 ForeingKey - связь один ко многим
 ManyToManyField - связь многие ко многим
 
+python manage.py shell
+
+from projects.models import Project
+
+Project.objects.all()
+Project.objects.get(id=1)
+Project.objects.filter(id=1)
+Project.objects.filter(title__startswith="Website")
+Project.objects.filter(title__icontains="web")
+Project.objects.exclude(title__icontains="web")
+
+quit()
+
+https://www.freelancer.com/portfolio-items/315324-website-for-picture-print-shop
+
+
+signals.py
