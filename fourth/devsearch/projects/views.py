@@ -30,6 +30,9 @@ def project(request, pk):
         review.project = project_obj
         review.owner = request.user.profile
         review.save()
+
+        project_obj.get_vote_count()
+
         messages.success(request, "Your review was successfully submitted!")
         return redirect('project', pk=project_obj.id)
 
@@ -87,3 +90,8 @@ def delete_project(request, pk):
 
     context = {'objects': project}
     return render(request, 'projects/delete.html', context)
+
+
+def page_not_found_view(request, exception):
+    return render(request, 'projects/404.html', status=404)
+
