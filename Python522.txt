@@ -743,3 +743,43 @@ https://www.freelancer.com/portfolio-items/315324-website-for-picture-print-shop
 
 
 signals.py
+
+utils.py
+
+http://127.0.0.1:8000/projects/?page=2
+
+<	1 2 3 4	5 6 7  >
+
+pagination.html
+
+Ctrl + R
+- поиск и замена
+
+projects
+queryset
+
+http://127.0.0.1:8000/projects/?search_query=web
+http://127.0.0.1:8000/projects/?page=2
+
+http://127.0.0.1:8000/projects/?search_query=web&page=2
+
+http://127.0.0.1:8000/projects/?search_query=web&page=2
+
+
+django-admin startproject programming_blog
+python manage.py startapp blog
+
+https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0
+
+str - любая не пустая строка, исключается символ "/"
+int - любое положительное число, включая "0"
+slug - слаг, ASCII символы (латиница), символы дифиса и подчеркивания
+uuid - цифры, малые латинские символы, дефис
+path - любая не пустая строка, включается символ "/"
+
+templatetags
+	__init__.py
+	blog_tags.py
+	
+
+utils.py
