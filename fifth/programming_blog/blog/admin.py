@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import *
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
+from django.utils.safestring import mark_safe
 
 
 class BlogAdminForm(forms.ModelForm):
@@ -15,11 +16,24 @@ class BlogAdminForm(forms.ModelForm):
 class BlogAdmin(admin.ModelAdmin):
     form = BlogAdminForm
     prepopulated_fields = {"slug": ('title',)}
-    list_display = ('id', 'title', 'cat', 'time_created', 'photo', 'is_published')
+    list_display = ('id', 'title', 'cat', 'time_created', 'get_html_photo', 'is_published')
     list_display_links = ('id', 'title')
     search_fields = ('title', 'content')
     list_editable = ('is_published',)
     list_filter = ('is_published', 'time_created')
+    fields = ('title', 'slug', 'cat', 'content', 'photo', 'get_photo', 'is_published', 'time_created', 'time_update')
+    readonly_fields = ('get_photo', 'time_created', 'time_update')
+    save_on_top = True
+
+    def get_html_photo(self, obj):
+        if obj.photo:
+            return mark_safe(f"<img src='{obj.photo.url}' width='70'>")
+
+    def get_photo(self, obj):
+        if obj.photo:
+            return mark_safe(f"<img src='{obj.photo.url}' width='200'>")
+
+    get_html_photo.short_description = "Миниатюра"
 
 
 class CategoryAdmin(admin.ModelAdmin):
@@ -31,3 +45,6 @@ class CategoryAdmin(admin.ModelAdmin):
 
 admin.site.register(Blog, BlogAdmin)
 admin.site.register(Category, CategoryAdmin)
+
+admin.site.site_title = "Админ-панель блога"
+admin.site.site_header = "Админ-панель блога"
