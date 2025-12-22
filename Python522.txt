@@ -783,3 +783,40 @@ templatetags
 	
 
 utils.py
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+
+python manage.py collectstatic
+
+
+git clone https://github.com/Helen-prog/blog.git
+ls - содержимое директории
+
+mkvirtualenv --python=/usr/bin/python3.13 blogvenv
+mkvirtualenv --python=/usr/bin/python3.9 blogvenv
+
+deactivate
+- для выхода из виртуального окружения
+
+workon blogvenv
+- для повторного входа
+
+pip install django
+pip install pillow
+pip install django-simple-captcha
+pip install django-ckeditor
+
+pwd
+- путь к каталогу
+
+/home/HelenKozovyakina/blog
+/home/HelenKozovyakina/blog/static
+/home/HelenKozovyakina/blog/media
+
+
+django-admin startproject shop
+python manage.py startapp products
+
+change_list.html
+
+csv_uploader.html
