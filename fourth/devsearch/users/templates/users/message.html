@@ -2,18 +2,22 @@
 {% load static %}
 {% block content %}
 
-  <!-- Main Section -->
-  <main class="messagePage my-xl">
+<!-- Main Section -->
+<main class="messagePage my-xl">
     <div class="content-box">
-      <div class="message">
-        <a class="backButton" href="{% url 'inbox' %}"><img src="{% static 'images/left.png' %}" alt="left"></a>
-        <h2 class="message__subject">{{ message.subject }}</h2>
-          <a href="#" class="message__author">{{ message.name }}</a>
-          <p class="message__date">{{ message.created }}</p>
-          <div class="message__body">
-            {{ message.body|linebreaksbr }}
-          </div>
-      </div>
+        <div class="message">
+            <a class="backButton" href="{% url 'inbox' %}"><img src="{% static 'images/left.png' %}" alt="left"></a>
+            <h2 class="message__subject">{{ message.subject }}</h2>
+            {% if message.sender %}
+            <a href="{% url 'user_profile' message.sender.id %}" class="message__author">{{ message.sender.name }}</a>
+            {% else %}
+            <p class="message__author">{{ message.name }}</p>
+            {% endif %}
+            <p class="message__date">{{ message.created }}</p>
+            <div class="message__body">
+                {{ message.body|linebreaksbr }}
+            </div>
+        </div>
     </div>
-  </main>
+</main>
 {% endblock %}
