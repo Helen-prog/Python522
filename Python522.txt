@@ -816,7 +816,12 @@ pwd
 
 django-admin startproject shop
 python manage.py startapp products
+python manage.py startapp users
+python manage.py startapp orders
 
 change_list.html
 
 csv_uploader.html
+
+
+https://youtube.com/playlist?list=PL-Hq_KrfJ31VcP0AmaulZmi5igAEEEoKw&si=b__IQPbf0Oj4Mo2R
